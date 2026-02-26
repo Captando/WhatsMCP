@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatMCP — Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span class="brand">ChatMCP</span>
+    <a href="/">Dashboard</a>
+    <a href="/chats.html">Chats</a>
+    <a href="/mcp.html">MCP Servers</a>
+    <a href="/settings.html">Settings</a>
+  </nav>
+
+  <main class="container">
+    <h1>Dashboard</h1>
+
+    <div class="card" id="status-card">
+      <h2>Status WhatsApp</h2>
+      <div class="status-row">
+        <span class="dot" id="status-dot"></span>
+        <span id="status-text">Carregando...</span>
+      </div>
+      <div id="qr-container" style="display:none; margin-top:1rem;">
+        <p>Escaneie o QR code com o WhatsApp:</p>
+        <img id="qr-img" src="" alt="QR Code" style="width:256px;height:256px;">
+      </div>
+    </div>
+
+    <div class="card" id="mcp-status-card">
+      <h2>MCP Servers Conectados</h2>
+      <div id="mcp-connected-list">Carregando...</div>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

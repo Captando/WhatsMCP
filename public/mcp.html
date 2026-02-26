@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatMCP — MCP Servers</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span class="brand">ChatMCP</span>
+    <a href="/">Dashboard</a>
+    <a href="/chats.html">Chats</a>
+    <a href="/mcp.html" class="active">MCP Servers</a>
+    <a href="/settings.html">Settings</a>
+  </nav>
+
+  <main class="container">
+    <h1>MCP Servers</h1>
+
+    <div class="card">
+      <h2>Adicionar Servidor MCP</h2>
+      <form id="add-mcp-form">
+        <div class="form-row">
+          <label>ID <small>(slug único)</small></label>
+          <input type="text" id="mcp-id" placeholder="ex: filesystem" required>
+        </div>
+        <div class="form-row">
+          <label>Nome</label>
+          <input type="text" id="mcp-name" placeholder="ex: Filesystem Local" required>
+        </div>
+        <div class="form-row">
+          <label>Tipo</label>
+          <select id="mcp-type" onchange="updateTypeFields()">
+            <option value="stdio">stdio (processo local)</option>
+            <option value="http">http (Streamable HTTP)</option>
+            <option value="sse">sse (Server-Sent Events)</option>
+          </select>
+        </div>
+
+        <div id="stdio-fields">
+          <div class="form-row">
+            <label>Comando</label>
+            <input type="text" id="mcp-command" placeholder="ex: npx">
+          </div>
+          <div class="form-row">
+            <label>Args <small>(separados por espaço)</small></label>
+            <input type="text" id="mcp-args" placeholder="ex: -y @modelcontextprotocol/server-filesystem /tmp">
+          </div>
+          <div class="form-row">
+            <label>Env <small>(JSON opcional)</small></label>
+            <input type="text" id="mcp-env" placeholder='ex: {"TOKEN": "abc"}'>
+          </div>
+        </div>
+
+        <div id="url-fields" style="display:none">
+          <div class="form-row">
+            <label>URL</label>
+            <input type="text" id="mcp-url" placeholder="ex: http://localhost:3001/mcp">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Adicionar e Conectar</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Servidores Cadastrados</h2>
+      <div id="mcp-list">Carregando...</div>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/mcp.js"></script>
+</body>
+</html>

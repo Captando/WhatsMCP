@@ -1,0 +1,6 @@
+node_modules/
+dist/
+data/chatmcp.db
+data/auth/
+.env
+*.js.map

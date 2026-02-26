@@ -1,0 +1,32 @@
+{
+  "name": "chatmcp",
+  "version": "1.0.0",
+  "description": "WhatsApp AI Agent with dynamic MCP support",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@modelcontextprotocol/sdk": "^1.10.0",
+    "@whiskeysockets/baileys": "^6.7.18",
+    "better-sqlite3": "^11.0.0",
+    "express": "^4.21.0",
+    "pino": "^9.0.0",
+    "pino-pretty": "^13.0.0",
+    "qrcode": "^1.5.4",
+    "dotenv": "^16.4.0",
+    "@hapi/boom": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/qrcode": "^1.5.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
